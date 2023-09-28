@@ -1,0 +1,32 @@
+<div class="card">
+  <p-table
+      [value]="transferHistory"
+      [paginator]="true"
+      [rows]="10"
+      [showCurrentPageReport]="true"
+      [tableStyle]="{ 'min-width': '50rem' }"
+      currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+      [rowsPerPageOptions]="[10, 25, 50]"
+  >
+      <ng-template pTemplate="header">
+          <tr>
+              <th style="width:25%">Transfer ID</th>
+              <th style="width:25%">Date</th>
+              <th style="width:25%">Source</th>
+              <th style="width:25%">Destination</th>
+              <th style="width:25%">amount</th>
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-transfer>
+          <tr>
+              <td>{{ transfer.transferId}}</td>
+              <td>{{ transfer.transferDate | date:'dd/MM/yyyy'}}</td>
+              <td>{{ transfer.source}}</td>
+              <td>{{ transfer.destination}}</td>
+              <td>{{ transfer.amount | currency}}</td>
+
+          </tr>
+      </ng-template>
+  </p-table>
+</div>
+<app-footer></app-footer>
