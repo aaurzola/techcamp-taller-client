@@ -11,6 +11,10 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ButtonModule } from 'primeng/button';
 import { TableModule } from 'primeng/table';
 import { TransferLogComponent } from './pages/transfer-log/transfer-log.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { HeaderComponent } from './components/header/header.component';
+
 
 @NgModule({
   declarations: [
@@ -18,14 +22,17 @@ import { TransferLogComponent } from './pages/transfer-log/transfer-log.componen
     BankDashboardComponent,
     CustomerDashboardComponent,
     FooterComponent,
-    TransferLogComponent
+    TransferLogComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ButtonModule,
-    TableModule
+    TableModule,
+    BrowserAnimationsModule,
+    NoopAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
